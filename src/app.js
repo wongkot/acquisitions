@@ -1,6 +1,7 @@
 import logger from '#config/logger.js';
 import securityMiddleware from '#middleware/security.middleware.js';
 import authRoutes from '#routes/auth.route.js';
+import userRoutes from '#routes/user.route.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
@@ -43,5 +44,6 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 export default app;
